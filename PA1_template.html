@@ -185,7 +185,7 @@ sprintf(&quot;5-minutes interval with most steps: %i&quot;,mostSteps)</code></pr
 <div id="imputing-missing-values" class="section level2">
 <h2>Imputing missing values</h2>
 <ol style="list-style-type: decimal">
-<li>Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with ????????s)</li>
+<li>Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)???s)</li>
 </ol>
 <pre class="r"><code>missingValues &lt;- length(which(is.na(activity$steps)))
 sprintf(&quot;Number of missing values: %i&quot;,missingValues)</code></pre>
@@ -212,6 +212,7 @@ sprintf(&quot;Mean = %f&quot;,meanStepsF)</code></pre>
 </div>
 <div id="are-there-differences-in-activity-patterns-between-weekdays-and-weekends" class="section level2">
 <h2>Are there differences in activity patterns between weekdays and weekends?</h2>
+<p>As you can see below patterns between weekdays and weekends are different.</p>
 <pre class="r"><code>wd = ifelse(weekdays(as.Date(activityF$date,'%Y-%m-%d')) %in% c('Sunday','Saturday'),'weekend','weekday')</code></pre>
 <pre><code>## Warning in strptime(x, format, tz = &quot;GMT&quot;): unknown timezone 'zone/tz/
 ## 2017c.1.0/zoneinfo/Europe/Warsaw'</code></pre>

@@ -57,7 +57,7 @@ sprintf("5-minutes interval with most steps: %i",mostSteps)
 
 ## Imputing missing values
 
-1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs))
+1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)???s)
 ```{r}
 missingValues <- length(which(is.na(activity$steps)))
 sprintf("Number of missing values: %i",missingValues)
@@ -82,8 +82,9 @@ sprintf("Mean = %f",meanStepsF)
 sprintf("Median = %f",medianStepsF)
 ```
 ## Are there differences in activity patterns between weekdays and weekends?
-``As you can see below patterns between weekdays and weekends are different.
-`{r}
+As you can see below patterns between weekdays and weekends are different.
+
+```{r}
 wd = ifelse(weekdays(as.Date(activityF$date,'%Y-%m-%d')) %in% c('Sunday','Saturday'),'weekend','weekday')
 activityF = cbind(activityF,wd)
 timeSeriesF <- aggregate(steps~interval + wd,activityF, FUN=mean, na.rm=TRUE)
